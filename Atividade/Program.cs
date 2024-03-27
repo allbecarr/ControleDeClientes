@@ -1,5 +1,7 @@
 ﻿//using System;
 //using System.Security.Cryptography;
+using System.Runtime.InteropServices;
+
 namespace Atividade
 {
     class Program
@@ -7,6 +9,11 @@ namespace Atividade
         static void Main(string[] args)
         {
             float val_pag;
+            string option;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("-------- Controle de Clientes --------");
                 Console.Write("Informar Nome: ");
                 string var_nome = Console.ReadLine();
                 Console.Write("Infomar Endereço:");
@@ -59,6 +66,10 @@ namespace Atividade
                     Console.WriteLine("Imposto: ......... " + pj.valor_imposto.ToString("C"));
                     Console.WriteLine("Total a Pagar: ... " + pj.total.ToString("C"));
                 }
+
+                Console.Write("\nDeseja continuar cadastrndo clientes? (s/n): ");
+                option = Console.ReadLine();
+            } while (option == "s");
         }
     }
 }
